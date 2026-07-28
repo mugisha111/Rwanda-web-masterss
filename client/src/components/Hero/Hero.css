@@ -1,0 +1,343 @@
+/* ==========================================
+   HERO SECTION
+========================================== */
+
+.hero{
+    position:relative;
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    overflow:hidden;
+}
+
+/* ==========================================
+   OVERLAY
+========================================== */
+
+.overlay{
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        90deg,
+        rgba(14,58,138,.88),
+        rgba(33,180,255,.48)
+    );
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.hero-container{
+
+    width:100%;
+    max-width:1180px;
+
+    margin:auto;
+
+    padding:120px 25px 70px;
+
+    position:relative;
+
+    z-index:2;
+
+    display:flex;
+    align-items:center;
+
+}
+
+/* ==========================================
+   LEFT SIDE
+========================================== */
+
+.hero-left{
+
+    width:650px;
+    max-width:100%;
+    color:#fff;
+
+}
+
+.hero-tag{
+
+    display:inline-block;
+
+    font-size:13px;
+
+    letter-spacing:4px;
+
+    font-weight:600;
+
+    margin-bottom:22px;
+
+    text-transform:uppercase;
+
+}
+
+.hero-left h1{
+
+    font-size:68px;
+
+    line-height:1.05;
+
+    font-weight:800;
+
+    margin-bottom:28px;
+
+}
+
+.hero-left p{
+
+    max-width:560px;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:rgba(255,255,255,.92);
+
+    margin-bottom:38px;
+
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+}
+
+.btn-primary,
+.btn-secondary{
+
+    width:175px;
+
+    height:54px;
+
+    border-radius:40px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.btn-primary{
+
+    border:none;
+
+    background:#31c5ff;
+
+    color:#fff;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 30px rgba(0,170,255,.30);
+
+}
+
+.btn-secondary{
+
+    background:transparent;
+
+    color:#fff;
+
+    border:2px solid #fff;
+
+}
+
+.btn-secondary:hover{
+
+    background:#fff;
+
+    color:#1565c0;
+
+}
+
+/* ==========================================
+   SCROLL
+========================================== */
+
+.scroll-down{
+
+    position:absolute;
+
+    bottom:25px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:#fff;
+
+    font-size:24px;
+
+    animation:bounce 1.8s infinite;
+
+}
+
+@keyframes bounce{
+
+0%,100%{
+
+transform:translate(-50%,0);
+
+}
+
+50%{
+
+transform:translate(-50%,12px);
+
+}
+
+}
+
+/* ==========================================
+   LAPTOP
+========================================== */
+
+@media(max-width:1200px){
+
+.hero-container{
+
+max-width:1000px;
+
+}
+
+.hero-left h1{
+
+font-size:58px;
+
+}
+
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media(max-width:992px){
+
+.hero{
+
+text-align:center;
+
+}
+
+.hero-container{
+
+justify-content:center;
+
+padding:120px 35px 70px;
+
+}
+
+.hero-left{
+
+width:100%;
+
+}
+
+.hero-left p{
+
+margin:auto;
+
+margin-bottom:35px;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.hero-left h1{
+
+font-size:52px;
+
+}
+
+}
+
+/* ==========================================
+   PHONE
+========================================== */
+
+@media(max-width:768px){
+
+.hero{
+
+min-height:90vh;
+
+}
+
+.hero-container{
+
+padding:100px 20px 60px;
+
+}
+
+.hero-tag{
+
+font-size:11px;
+
+letter-spacing:3px;
+
+}
+
+.hero-left h1{
+
+font-size:38px;
+
+line-height:1.15;
+
+}
+
+.hero-left p{
+
+font-size:16px;
+
+line-height:1.8;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.btn-primary,
+.btn-secondary{
+
+width:100%;
+
+max-width:280px;
+
+margin:auto;
+
+}
+
+}

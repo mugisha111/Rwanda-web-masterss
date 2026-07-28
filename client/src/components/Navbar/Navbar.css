@@ -1,0 +1,382 @@
+/* ==========================================
+   NAVBAR
+========================================== */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:78px;
+    background:white;
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    z-index:1000;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-bottom:2px solid rgba(0,0,0,.05);
+    transition:.3s ease;
+}
+
+.navbar-scrolled{
+    background:rgba(255,255,255,.98);
+    box-shadow:0 12px 30px rgba(15,23,42,.06);
+    border-bottom:1px solid rgba(39,191,255,.12);
+}
+
+/* ==========================================
+   INNER CONTAINER
+========================================== */
+
+.navbar-inner{
+    width:100%;
+    max-width:1240px;
+    height:100%;
+    margin:0 auto;
+    padding:0 24px;
+    box-sizing:border-box;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+}
+
+.logo,
+.nav-menu,
+.nav-right{
+    z-index:10;
+}
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.logo{
+    display:flex;
+    align-items:center;
+    flex-shrink:0;
+}
+
+.logo img{
+    height:50px;
+    width:auto;
+    object-fit:contain;
+}
+
+/* ==========================================
+   MENU
+========================================== */
+
+.nav-menu{
+    display:flex;
+    justify-content:center;
+    flex:1;
+}
+
+.nav-menu ul{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.nav-menu li{
+    position:relative;
+}
+
+.nav-menu a{
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    padding:10px 16px;
+    border-radius:10px;
+    color:#1a1a1a;
+    font-size:14px;
+    font-weight:600;
+    transition:.25s ease;
+}
+
+.nav-menu a:hover{
+    color:#0d9ede;
+    background:rgba(39,191,255,.08);
+}
+
+.nav-menu a.active{
+    color:#0d9ede;
+    background:rgba(39,191,255,.1);
+}
+
+.dropdown-trigger{
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    padding:10px 16px;
+    border-radius:10px;
+    color:#1a1a1a;
+    font-size:14px;
+    font-weight:600;
+    transition:.25s ease;
+    -webkit-user-select:none;
+    user-select:none;
+}
+
+.dropdown-trigger:hover{
+    color:#0d9ede;
+    background:rgba(39,191,255,.08);
+}
+
+.arrow{
+    font-size:10px;
+    transition:.25s ease;
+}
+
+.arrow.rotated{
+    transform:rotate(180deg);
+}
+
+/* ==========================================
+   DROPDOWN
+========================================== */
+
+.dropdown-content{
+    position:absolute;
+    top:calc(100% + 10px);
+    left:0;
+    width:220px;
+    background:#fff;
+    border-radius:14px;
+    box-shadow:0 25px 55px rgba(15,23,42,.1);
+    border:1px solid rgba(15,23,42,.04);
+    overflow:hidden;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(12px);
+    transition:.3s ease;
+}
+
+.dropdown-content-wide{
+    width:300px;
+    padding:8px;
+}
+
+.dropdown:hover .dropdown-content{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+.dropdown-content a,
+.dropdown-link-btn{
+    display:block;
+    width:100%;
+    text-align:left;
+    padding:14px 18px;
+    font-size:14px;
+    font-weight:500;
+    color:#1a1a1a;
+    background:none;
+    border:none;
+    cursor:pointer;
+    font-family:inherit;
+    text-decoration:none;
+    transition:.2s ease;
+}
+
+.dropdown-content a:hover,
+.dropdown-link-btn:hover{
+    background:#f5fbff;
+    color:#0d9ede;
+}
+
+.dropdown-service-item{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+    padding:12px 14px;
+    border-radius:10px;
+}
+
+.dropdown-service-label{
+    font-size:14px;
+    font-weight:700;
+    color:#111;
+}
+
+.dropdown-service-desc{
+    font-size:12.5px;
+    font-weight:400;
+    color:#777;
+}
+
+.dropdown-service-item:hover .dropdown-service-label{
+    color:#0d9ede;
+}
+
+/* ==========================================
+   RIGHT
+========================================== */
+
+.nav-right{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    flex-shrink:0;
+}
+
+.start-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 28px;
+    border-radius:40px;
+    border:none;
+    background:linear-gradient(90deg,#31C5FF,#4DD0F5);
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+    text-decoration:none;
+    white-space:nowrap;
+    box-shadow:0 10px 26px rgba(49,197,255,.32);
+    transition:.3s ease;
+}
+
+.start-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 16px 34px rgba(49,197,255,.42);
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+.mobile-btn{
+    display:none;
+    font-size:22px;
+    color:#1a1a1a;
+    cursor:pointer;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media(max-width:992px){
+
+.navbar{
+    height:72px;
+}
+
+.navbar-inner{
+    padding:0 20px;
+}
+
+.nav-menu{
+    position:fixed;
+    top:72px;
+    left:-100%;
+    width:100%;
+    height:calc(100vh - 72px);
+    background:#fff;
+    padding:30px 20px;
+    box-sizing:border-box;
+    overflow-y:auto;
+    transition:.4s ease;
+    justify-content:flex-start;
+}
+
+.nav-menu.active{
+    left:0;
+}
+
+.nav-menu ul{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:6px;
+    width:100%;
+}
+
+.nav-menu li{
+    width:100%;
+}
+
+.nav-menu a,
+.dropdown-trigger{
+    width:100%;
+    padding:14px 4px;
+    border-bottom:1px solid #f1f1f1;
+    border-radius:0;
+    justify-content:space-between;
+}
+
+.dropdown-content{
+    position:static;
+    width:100%;
+    box-shadow:none;
+    border:none;
+    border-radius:0;
+    background:#fafafa;
+    transform:none;
+    opacity:1;
+    visibility:visible;
+    max-height:0;
+    transition:max-height .35s ease;
+}
+
+.dropdown-content-wide{
+    padding:0;
+}
+
+.dropdown-content.mobile-open{
+    max-height:320px;
+}
+
+.dropdown:hover .dropdown-content{
+    max-height:0;
+}
+
+.dropdown:hover .dropdown-content.mobile-open{
+    max-height:320px;
+}
+
+.nav-right{
+    display:none;
+}
+
+.mobile-btn{
+    display:block;
+}
+
+.logo img{
+    height:44px;
+}
+
+}
+
+/* ==========================================
+   PHONE
+========================================== */
+
+@media(max-width:768px){
+
+.navbar{
+    height:66px;
+}
+
+.nav-menu{
+    top:66px;
+    height:calc(100vh - 66px);
+}
+
+.logo img{
+    height:38px;
+}
+
+}

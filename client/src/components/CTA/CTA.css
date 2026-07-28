@@ -1,0 +1,717 @@
+/* =========================
+   GOOGLE FONT
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* =========================
+   CTA SECTION
+========================= */
+
+.cta{
+    position:relative;
+    padding:100px 20px;
+    background:#f7f9fc;
+    overflow:hidden;
+    font-family:'Inter',sans-serif;
+}
+
+.cta-container{
+
+    max-width:1200px;
+    margin:auto;
+    background:#fff;
+    border-radius:24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:70px;
+    padding:65px;
+    box-shadow:0 20px 60px rgba(0,0,0,.08);
+    position:relative;
+    z-index:2;
+
+}
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.cta-left{
+
+    flex:1;
+
+}
+
+.cta-tag{
+
+    display:inline-block;
+    color:#31c5ff;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:2px;
+    margin-bottom:18px;
+    text-transform:uppercase;
+
+}
+
+.cta-left h2{
+
+    font-size:50px;
+    line-height:1.15;
+    color:#0f172a;
+    font-weight:700;
+    margin-bottom:22px;
+
+}
+
+.cta-left p{
+
+    color:#64748b;
+    font-size:16px;
+    line-height:1.9;
+    max-width:480px;
+
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.cta-contact{
+
+    margin-top:35px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+
+}
+
+.contact-item{
+
+    display:flex;
+    align-items:center;
+    gap:16px;
+
+}
+
+.contact-item svg{
+
+    width:52px;
+    height:52px;
+    padding:15px;
+    background:#31c5ff;
+    color:#fff;
+    border-radius:50%;
+    flex-shrink:0;
+
+}
+
+.contact-item div{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.contact-item small{
+
+    color:#94a3b8;
+    font-size:13px;
+    margin-bottom:4px;
+
+}
+
+.contact-item h4{
+
+    color:#0f172a;
+    font-size:16px;
+    font-weight:600;
+    line-height:1.5;
+    word-break:break-word;
+
+}
+
+/* =========================
+   FORM CARD
+========================= */
+
+.cta-form-card{
+
+    flex:1;
+    background:#fff;
+    border-radius:22px;
+    padding:35px;
+    box-shadow:0 18px 45px rgba(0,0,0,.08);
+
+}
+
+.cta-form{
+
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+
+}
+/* =========================
+   INPUTS
+========================= */
+
+.input-group{
+    position:relative;
+}
+
+.input-icon{
+
+    position:absolute;
+    left:18px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#31c5ff;
+    font-size:15px;
+    transition:.3s;
+
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea{
+
+    width:100%;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:14px;
+    padding:15px 18px 15px 50px;
+    outline:none;
+    font-size:15px;
+    transition:.3s;
+    color:#0f172a;
+
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder{
+
+    color:#94a3b8;
+
+}
+
+.input-group select{
+
+    cursor:pointer;
+
+}
+
+.input-group textarea{
+
+    resize:none;
+    min-height:150px;
+    padding:18px;
+
+}
+
+.textarea .input-icon{
+
+    top:22px;
+    transform:none;
+
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus{
+
+    background:#fff;
+    border-color:#31c5ff;
+    box-shadow:0 0 0 4px rgba(49,197,255,.15);
+
+}
+
+.input-group:focus-within .input-icon{
+
+    color:#0d6efd;
+
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.cta-btn{
+
+    border:none;
+    cursor:pointer;
+    margin-top:8px;
+    padding:16px 22px;
+    border-radius:50px;
+    background:linear-gradient(135deg,#31c5ff,#0d6efd);
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    transition:.35s;
+
+}
+
+.cta-btn:hover{
+
+    transform:translateY(-3px);
+    box-shadow:0 18px 35px rgba(13,110,253,.30);
+
+}
+
+.cta-btn:active{
+
+    transform:scale(.98);
+
+}
+
+.cta-btn:disabled{
+
+    opacity:.7;
+    cursor:not-allowed;
+
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.cta-status{
+
+    text-align:center;
+    font-size:14px;
+    color:#31c5ff;
+    font-weight:600;
+
+}
+
+/* =========================
+   BACKGROUND SHAPES
+========================= */
+
+.cta-shape{
+
+    position:absolute;
+    border-radius:50%;
+    z-index:1;
+
+}
+
+.shape-one{
+
+    width:240px;
+    height:240px;
+    background:rgba(49,197,255,.08);
+    top:-100px;
+    left:-90px;
+
+}
+
+.shape-two{
+
+    width:170px;
+    height:170px;
+    background:rgba(49,197,255,.06);
+    right:-60px;
+    bottom:60px;
+
+}
+
+.shape-three{
+
+    width:90px;
+    height:90px;
+    background:rgba(49,197,255,.12);
+    top:40%;
+    left:45%;
+
+}
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* =========================
+   Laptop
+========================= */
+
+@media (max-width:1100px){
+
+    .cta-container{
+
+        gap:45px;
+        padding:50px;
+
+    }
+
+    .cta-left h2{
+
+        font-size:42px;
+
+    }
+
+}
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width:992px){
+
+    .cta{
+
+        padding:80px 20px;
+
+    }
+
+    .cta-container{
+
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+        padding:40px 30px;
+        gap:35px;
+
+    }
+
+    .cta-left,
+    .cta-form-card{
+
+        width:100%;
+        max-width:700px;
+
+    }
+
+    .cta-left p{
+
+        max-width:100%;
+        margin:15px auto 0;
+
+    }
+
+    .cta-contact{
+
+        align-items:center;
+        margin-top:30px;
+
+    }
+
+    .contact-item{
+
+        justify-content:center;
+
+    }
+
+    .contact-item div{
+
+        text-align:left;
+
+    }
+
+    .cta-left h2{
+
+        font-size:38px;
+
+    }
+
+}
+
+/* =========================
+   Phones
+========================= */
+
+@media (max-width:768px){
+
+    .cta{
+
+        padding:60px 15px;
+
+    }
+
+    .cta-container{
+
+        padding:22px;
+        border-radius:18px;
+        gap:25px;
+
+    }
+
+    .cta-left{
+
+        text-align:center;
+
+    }
+
+    .cta-tag{
+
+        font-size:11px;
+        letter-spacing:1px;
+
+    }
+
+    .cta-left h2{
+
+        font-size:31px;
+        line-height:1.2;
+        margin-bottom:15px;
+
+    }
+
+    .cta-left p{
+
+        font-size:15px;
+        line-height:1.7;
+        max-width:330px;
+        margin:auto;
+
+    }
+
+    .cta-contact{
+
+        margin-top:25px;
+        gap:16px;
+
+    }
+
+    .contact-item{
+
+        width:100%;
+        justify-content:flex-start;
+        text-align:left;
+
+    }
+
+    .contact-item svg{
+
+        width:45px;
+        height:45px;
+        padding:12px;
+
+    }
+
+    .contact-item h4{
+
+        font-size:14px;
+
+    }
+
+    .cta-form-card{
+
+        width:100%;
+        padding:22px;
+        border-radius:18px;
+
+    }
+
+    .input-group input,
+    .input-group select,
+    .input-group textarea{
+
+        font-size:15px;
+        padding:14px 16px 14px 45px;
+
+    }
+
+    .textarea textarea{
+
+        padding:18px;
+
+    }
+
+    .input-icon{
+
+        left:15px;
+
+    }
+
+    .cta-btn{
+
+        width:100%;
+        padding:15px;
+        font-size:15px;
+
+    }
+
+}
+
+/* =========================
+   Small Phones
+========================= */
+
+@media (max-width:480px){
+
+    .cta{
+
+        padding:45px 12px;
+
+    }
+
+    .cta-container{
+
+        padding:18px;
+        border-radius:16px;
+
+    }
+
+    .cta-left h2{
+
+        font-size:26px;
+
+    }
+
+    .cta-left p{
+
+        font-size:14px;
+        line-height:1.6;
+
+    }
+
+    .cta-contact{
+
+        gap:14px;
+
+    }
+
+    .contact-item{
+
+        align-items:flex-start;
+
+    }
+
+    .contact-item svg{
+
+        width:42px;
+        height:42px;
+        padding:11px;
+
+    }
+
+    .contact-item small{
+
+        font-size:12px;
+
+    }
+
+    .contact-item h4{
+
+        font-size:13px;
+        line-height:1.5;
+        word-break:break-word;
+
+    }
+
+    .cta-form-card{
+
+        padding:18px;
+
+    }
+
+    .input-group input,
+    .input-group select,
+    .input-group textarea{
+
+        font-size:14px;
+        border-radius:12px;
+
+    }
+
+    .cta-btn{
+
+        font-size:14px;
+
+    }
+
+}
+
+/* =========================
+   Extra Small Phones
+========================= */
+
+@media (max-width:360px){
+
+    .cta-left h2{
+
+        font-size:22px;
+
+    }
+
+    .cta-left p{
+
+        font-size:13px;
+
+    }
+
+    .contact-item{
+
+        gap:10px;
+
+    }
+
+    .contact-item svg{
+
+        width:38px;
+        height:38px;
+        padding:9px;
+
+    }
+
+    .contact-item h4{
+
+        font-size:12px;
+
+    }
+
+    .input-group input,
+    .input-group select,
+    .input-group textarea{
+
+        font-size:13px;
+        padding:12px 14px 12px 42px;
+
+    }
+
+    .input-icon{
+
+        left:13px;
+        font-size:13px;
+
+    }
+
+    .cta-btn{
+
+        padding:13px;
+        font-size:13px;
+
+    }
+
+}
+
+/* =========================
+   Large Desktop
+========================= */
+
+@media (min-width:1400px){
+
+    .cta-container{
+
+        max-width:1350px;
+        padding:70px;
+
+    }
+
+    .cta-left h2{
+
+        font-size:58px;
+
+    }
+
+    .cta-form-card{
+
+        padding:40px;
+
+    }
+
+}

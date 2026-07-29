@@ -13,32 +13,33 @@ const features = [
   {
     icon: <FaLaptopCode />,
     title: "Professional Development",
-    desc: "We build modern websites, web applications and custom business systems using the latest technologies.",
+    desc: "We build modern websites, web applications and custom business systems using the latest technologies — engineered to grow with your business.",
+    featured: true,
   },
   {
     icon: <FaMobileAlt />,
     title: "Responsive Design",
-    desc: "Every project is fully responsive and delivers a seamless experience across desktop, tablet and mobile devices.",
+    desc: "Seamless experience across desktop, tablet and mobile devices.",
   },
   {
     icon: <FaShieldAlt />,
     title: "Secure Solutions",
-    desc: "Security is integrated into every stage of development to protect your business and customer data.",
+    desc: "Security integrated into every stage of development.",
   },
   {
     icon: <FaRocket />,
     title: "Fast Performance",
-    desc: "Optimized code and modern technologies ensure fast loading speeds and outstanding performance.",
+    desc: "Optimized code for fast loading speeds and outstanding performance.",
   },
   {
     icon: <FaHeadset />,
     title: "Reliable Support",
-    desc: "We provide continuous technical support, maintenance and updates whenever your business needs them.",
+    desc: "Continuous technical support and maintenance whenever you need it.",
   },
   {
     icon: <FaCheckCircle />,
     title: "Long-Term Partnership",
-    desc: "Our goal is not only to build your project but also to become your trusted technology partner.",
+    desc: "We aim to become your trusted long-term technology partner.",
   },
 ];
 
@@ -49,50 +50,33 @@ function WhyChoose() {
       <div className="why-container">
 
         <div className="why-header">
-
-          <span className="why-tag">
-            WHY CHOOSE US
-          </span>
-
+          <span className="why-tag">WHY CHOOSE US</span>
           <h2>
             Why Businesses Choose
             <br />
             Rwanda Web Masters
           </h2>
-
           <p className="why-description">
             We combine creativity, innovation and modern technologies
             to build reliable digital solutions that help businesses
             grow, improve efficiency and achieve long-term success.
           </p>
-
         </div>
 
-        <div className="why-list">
-
+        <div className="why-bento">
           {features.map((item, index) => (
-
             <div
-              className="why-item"
+              className={`why-item ${item.featured ? "why-item-featured" : ""}`}
               key={index}
             >
-
-              <div className="why-icon">
-                {item.icon}
-              </div>
+              <div className="why-icon">{item.icon}</div>
 
               <div className="why-info">
-
                 <h3>{item.title}</h3>
-
                 <p>{item.desc}</p>
-
               </div>
-
             </div>
-
           ))}
-
         </div>
 
       </div>

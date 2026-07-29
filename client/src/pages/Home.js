@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "../components/Navbar/Navbar";
+import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
 import Hero from "../components/Hero/Hero";
 import Services from "../components/Services/Services";
 import Solutions from "../components/Solutions/Solutions";
@@ -13,10 +14,12 @@ import Footer from "../components/Footer/Footer";
 import About from "../components/About/About";
 import Contact from "../components/Contact/Contact";
 import PortfolioPage from "../components/PortfolioPage/PortfolioPage";
+import ServiceDetail from "../components/ServiceDetail/ServiceDetail";
 
 function Home() {
   return (
     <>
+      <ScrollToTop />
       <Navbar />
 
       <Routes>
@@ -46,6 +49,9 @@ function Home() {
 
         {/* PORTFOLIO PAGE */}
         <Route path="/portfolio" element={<PortfolioPage />} />
+
+        {/* SERVICE DETAIL PAGE */}
+        <Route path="/services/:slug" element={<ServiceDetail />} />
 
       </Routes>
 

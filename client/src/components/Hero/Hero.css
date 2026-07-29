@@ -195,7 +195,17 @@
 
     animation:bounce 1.8s infinite;
 
+    /* NEW — button reset */
+    background:none;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0;
 }
+
 
 @keyframes bounce{
 

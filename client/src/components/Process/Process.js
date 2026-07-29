@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import "./Process.css";
 
 import {
@@ -47,16 +48,34 @@ const steps = [
 ];
 
 function Process() {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect(); // animate once only
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="process">
-
+    <section className="process" ref={sectionRef}>
       <div className="process-container">
-
         <div className="process-header">
-
-          <span className="process-tag">
-            OUR PROCESS
-          </span>
+          <span className="process-tag">OUR PROCESS</span>
 
           <h2>
             How We Build
@@ -68,38 +87,30 @@ function Process() {
             We follow a structured development process that ensures every
             project is delivered with quality, speed and long-term success.
           </p>
-
         </div>
 
         <div className="process-grid">
-
-          {steps.map((step) => (
-
+          {steps.map((step, index) => (
             <div
-              className="process-card"
+              className={`process-card ${isVisible ? "reveal" : ""}`}
               key={step.number}
+              style={{ transitionDelay: `${index * 130}ms` }}
             >
+              {index !== steps.length - 1 && (
+                <span className="process-connector" />
+              )}
 
-              <span className="process-number">
-                {step.number}
-              </span>
+              <span className="process-number">{step.number}</span>
 
-              <div className="process-icon">
-                {step.icon}
-              </div>
+              <div className="process-icon">{step.icon}</div>
 
               <h3>{step.title}</h3>
 
               <p>{step.description}</p>
-
             </div>
-
           ))}
-
         </div>
-
       </div>
-
     </section>
   );
 }

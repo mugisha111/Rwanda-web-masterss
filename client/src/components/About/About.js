@@ -1,5 +1,27 @@
 import "./About.css";
-import { FiTarget, FiEye, FiUsers } from "react-icons/fi";
+import { FiTarget, FiEye, FiUsers, FiLinkedin, FiTwitter, FiMail } from "react-icons/fi";
+import theophileImg from "../../assets/team/theophile.png";
+
+const TEAM = [
+  {
+    name: "Mugisha Theophile",
+    role: "Founder & Full Stack Developer",
+    image: theophileImg,
+    isPlaceholder: false,
+  },
+  {
+    name: "Umukundwa Vanessa",
+    role: "UI / UX Designer",
+    image: null,
+    isPlaceholder: true,
+  },
+  {
+    name: "Marko Roberts",
+    role: "Backend Developer",
+    image: null,
+    isPlaceholder: true,
+  },
+];
 
 function About() {
   return (
@@ -74,6 +96,43 @@ function About() {
               that last.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* OUR TEAM */}
+      <section id="our-team" className="about-team-section">
+        <div className="about-team-header">
+          <span className="about-eyebrow">Our Team</span>
+          <h2>The People Behind the Work</h2>
+          <p>
+            A small, focused team of builders committed to delivering
+            software our clients can rely on.
+          </p>
+        </div>
+
+        <div className="about-team-grid">
+          {TEAM.map((member, index) => (
+            <div className="about-team-card" key={index}>
+              <div className="about-team-avatar">
+                {member.isPlaceholder ? (
+                  <span className="about-team-avatar-placeholder">
+                    {member.role.charAt(0)}
+                  </span>
+                ) : (
+                  <img src={member.image} alt={member.name} />
+                )}
+              </div>
+
+              <h3>{member.name}</h3>
+              <p>{member.role}</p>
+
+              <div className="about-team-socials">
+                <a href="#" aria-label="LinkedIn"><FiLinkedin /></a>
+                <a href="#" aria-label="Twitter"><FiTwitter /></a>
+                <a href="#" aria-label="Email"><FiMail /></a>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

@@ -126,6 +126,141 @@
 #vision{
     scroll-margin-top:100px;
 }
+/* ==========================================
+   OUR TEAM
+========================================== */
+
+.about-team-section{
+    padding:80px 6% 100px;
+    background:#FFFFFF;
+}
+
+.about-team-header{
+    max-width:620px;
+    margin:0 auto 60px;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+}
+
+.about-team-header h2{
+    font-size:32px;
+    font-weight:800;
+    color:#0F172A;
+    margin:0;
+}
+
+.about-team-header p{
+    font-size:16px;
+    line-height:1.7;
+    color:#64748B;
+    margin:0;
+}
+
+.about-team-grid{
+    max-width:1000px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.about-team-card{
+    background:#F8FCFF;
+    border:1px solid rgba(49,197,255,.12);
+    border-radius:22px;
+    padding:36px 28px;
+    text-align:center;
+    transition:.3s ease;
+}
+
+.about-team-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 45px rgba(49,197,255,.14);
+    border-color:rgba(49,197,255,.3);
+}
+
+.about-team-avatar{
+    width:110px;
+    height:110px;
+    margin:0 auto 20px;
+    border-radius:50%;
+    overflow:hidden;
+    background:linear-gradient(135deg,#31C5FF,#4DD0F5);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.about-team-avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.about-team-avatar-placeholder{
+    font-size:38px;
+    font-weight:800;
+    color:#FFFFFF;
+}
+
+.about-team-card h3{
+    font-size:18px;
+    font-weight:700;
+    color:#0F172A;
+    margin:0 0 4px;
+}
+
+.about-team-card p{
+    font-size:14px;
+    color:#0d9ede;
+    font-weight:600;
+    margin:0 0 18px;
+}
+
+.about-team-socials{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+}
+
+.about-team-socials a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:#FFFFFF;
+    border:1px solid rgba(49,197,255,.15);
+    color:#64748B;
+    transition:.25s ease;
+}
+
+.about-team-socials a:hover{
+    background:linear-gradient(135deg,#31C5FF,#4DD0F5);
+    color:#FFFFFF;
+    border-color:transparent;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+.about-team-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+.about-team-header h2{
+    font-size:26px;
+}
+
+}
 
 /* ==========================================
    RESPONSIVE

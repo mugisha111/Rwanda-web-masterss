@@ -31,6 +31,7 @@ const ABOUT_US = [
   { label: "Who We Are", id: "who-we-are" },
   { label: "Mission", id: "mission" },
   { label: "Vision", id: "vision" },
+  { label: "Our Team", id: "our-team" },
 ];
 
 function Navbar() {
@@ -63,7 +64,12 @@ function Navbar() {
   }, [mobileMenu]);
 
   // Scrolls to a section on the About page (navigates there first if needed)
+  // Always closes the mobile menu manually, since staying on /about
+  // means no route change happens for the useEffect above to react to.
   const goToAboutSection = (sectionId) => {
+    setMobileMenu(false);
+    setMobileAbout(false);
+
     if (location.pathname === "/about") {
       const el = document.getElementById(sectionId);
       if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -131,7 +137,15 @@ function Navbar() {
 
               <div className={`dropdown-content dropdown-content-wide ${mobileServices ? "mobile-open" : ""}`}>
                 {WHAT_WE_DO.map((service) => (
-                  <Link key={service.slug} to={`/services/${service.slug}`} className="dropdown-service-item">
+                  <Link
+                    key={service.slug}
+                    to={`/services/${service.slug}`}
+                    className="dropdown-service-item"
+                    onClick={() => {
+                      setMobileMenu(false);
+                      setMobileServices(false);
+                    }}
+                  >
                     <span className="dropdown-service-label">{service.label}</span>
                     <span className="dropdown-service-desc">{service.desc}</span>
                   </Link>

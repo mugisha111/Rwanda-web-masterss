@@ -127,10 +127,10 @@ function About() {
               <p>{member.role}</p>
 
               <div className="about-team-socials">
-                <a href="#" aria-label="LinkedIn"><FiLinkedin /></a>
-                <a href="#" aria-label="Twitter"><FiTwitter /></a>
-                <a href="#" aria-label="Email"><FiMail /></a>
-              </div>
+  <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FiLinkedin /></a>
+  <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter"><FiTwitter /></a>
+  <a href="mailto:rwandawebmasters@gmail.com" aria-label="Email"><FiMail /></a>
+</div>
             </div>
           ))}
         </div>

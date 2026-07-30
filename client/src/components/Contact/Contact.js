@@ -200,7 +200,7 @@ function Contact() {
 
           <div className="contact-detail-item">
             <span className="contact-detail-icon">
-              <FaPhoneAlt />x
+              <FaPhoneAlt />
             </span>
             <h4>Phone Number</h4>
             <p>+250 79 377 0200</p>

@@ -200,10 +200,10 @@ function Contact() {
 
           <div className="contact-detail-item">
             <span className="contact-detail-icon">
-              <FaPhoneAlt />
+              <FaPhoneAlt />x
             </span>
             <h4>Phone Number</h4>
-            <p>+250 700 000 000</p>
+            <p>+250 79 377 0200</p>
           </div>
 
           <div className="contact-detail-item">
@@ -211,7 +211,7 @@ function Contact() {
               <FaEnvelope />
             </span>
             <h4>Email Address</h4>
-            <p>info@rwandawebmasters.com</p>
+            <p>rwandawebmasters@gmail.com</p>
           </div>
 
           <div className="contact-detail-item">

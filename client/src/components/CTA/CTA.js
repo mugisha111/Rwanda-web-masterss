@@ -127,7 +127,7 @@ function CTA() {
 
                 <small>Email</small>
 
-                <h4>mugishatheophile1234@gmail.com</h4>
+                <h4>rwandawebmasters@gmail.com</h4>
 
               </div>
 

@@ -81,6 +81,15 @@
     gap:24px;
 }
 
+/* Ensure the Reveal wrapper (direct grid item) always
+   stretches to fill its grid cell and never shrinks
+   below it — fixes cards collapsing to a thin sliver
+   on mobile where the grid uses a single 1fr column. */
+.solutions-grid > div{
+    width:100%;
+    min-width:0;
+}
+
 /* =========================================
    CARD
 ========================================= */
@@ -446,8 +455,7 @@
     }
 
     .solutions-grid{
-        grid-template-columns:1fr;
-        justify-items:center;
+        grid-template-columns:minmax(0,1fr);
         gap:22px;
     }
 

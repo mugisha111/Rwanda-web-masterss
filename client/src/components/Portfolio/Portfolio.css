@@ -1,34 +1,4 @@
 /* =========================================
-   GLOBAL RESET
-========================================= */
-
-*,
-*::before,
-*::after{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-html,
-body{
-    width:100%;
-    max-width:100%;
-    overflow-x:hidden;
-    font-family:"Poppins",sans-serif;
-}
-
-img{
-    display:block;
-    max-width:100%;
-    height:auto;
-}
-
-/* =========================================
    PORTFOLIO SECTION
 ========================================= */
 

@@ -1,6 +1,7 @@
 import "./ServiceDetail.css";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { FiCode, FiSmartphone, FiFigma, FiSearch, FiArrowRight, FiCheck } from "react-icons/fi";
+import Reveal from "../Reveal/Reveal";
 
 const SERVICES_DATA = {
   "web-development": {
@@ -81,26 +82,37 @@ function ServiceDetail() {
   }
 
   return (
-    <div className="sd-page">
+    <div className="sd-page" key={slug}>
 
       {/* HERO */}
       <section className="sd-hero">
-        <div className="sd-hero-icon">{service.icon}</div>
-        <span className="sd-eyebrow">Our Services</span>
-        <h1>{service.title}</h1>
-        <p>{service.tagline}</p>
+        <Reveal>
+          <div className="sd-hero-icon">{service.icon}</div>
+        </Reveal>
+
+        <Reveal delay={150}>
+          <span className="sd-eyebrow">Our Services</span>
+        </Reveal>
+
+        <Reveal delay={280}>
+          <h1>{service.title}</h1>
+        </Reveal>
+
+        <Reveal delay={420}>
+          <p>{service.tagline}</p>
+        </Reveal>
       </section>
 
       {/* CONTENT */}
       <section className="sd-content">
         <div className="sd-content-grid">
 
-          <div className="sd-description">
+          <Reveal className="sd-description">
             <h2>Overview</h2>
             <p>{service.description}</p>
-          </div>
+          </Reveal>
 
-          <div className="sd-features">
+          <Reveal delay={150} className="sd-features">
             <h2>What's Included</h2>
             <ul>
               {service.features.map((feature, index) => (
@@ -110,35 +122,39 @@ function ServiceDetail() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
 
         </div>
 
         {/* OTHER SERVICES */}
-        <div className="sd-other-services">
-          <h3>Explore Other Services</h3>
-          <div className="sd-other-list">
-            {Object.keys(SERVICES_DATA)
-              .filter((key) => key !== slug)
-              .map((key) => (
-                <Link key={key} to={`/services/${key}`} className="sd-other-item">
-                  {SERVICES_DATA[key].icon}
-                  {SERVICES_DATA[key].title}
-                </Link>
-              ))}
+        <Reveal>
+          <div className="sd-other-services">
+            <h3>Explore Other Services</h3>
+            <div className="sd-other-list">
+              {Object.keys(SERVICES_DATA)
+                .filter((key) => key !== slug)
+                .map((key) => (
+                  <Link key={key} to={`/services/${key}`} className="sd-other-item">
+                    {SERVICES_DATA[key].icon}
+                    {SERVICES_DATA[key].title}
+                  </Link>
+                ))}
+            </div>
           </div>
-        </div>
+        </Reveal>
 
         {/* CTA */}
-        <div className="sd-cta">
-          <div>
-            <h3>Ready to get started?</h3>
-            <p>Let's discuss how {service.title.toLowerCase()} can help your business.</p>
+        <Reveal>
+          <div className="sd-cta">
+            <div>
+              <h3>Ready to get started?</h3>
+              <p>Let's discuss how {service.title.toLowerCase()} can help your business.</p>
+            </div>
+            <button onClick={() => navigate("/contact")}>
+              Start a Project <FiArrowRight />
+            </button>
           </div>
-          <button onClick={() => navigate("/contact")}>
-            Start a Project <FiArrowRight />
-          </button>
-        </div>
+        </Reveal>
 
       </section>
     </div>

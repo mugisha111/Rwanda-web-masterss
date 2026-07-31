@@ -1,4 +1,5 @@
 import "./WhyChoose.css";
+import Reveal from "../Reveal/Reveal";
 
 import {
   FaLaptopCode,
@@ -49,33 +50,40 @@ function WhyChoose() {
 
       <div className="why-container">
 
-        <div className="why-header">
-          <span className="why-tag">WHY CHOOSE US</span>
-          <h2>
-            Why Businesses Choose
-            <br />
-            Rwanda Web Masters
-          </h2>
-          <p className="why-description">
-            We combine creativity, innovation and modern technologies
-            to build reliable digital solutions that help businesses
-            grow, improve efficiency and achieve long-term success.
-          </p>
-        </div>
+        <Reveal>
+          <div className="why-header">
+            <span className="why-tag">WHY CHOOSE US</span>
+            <h2>
+              Why Businesses Choose
+              <br />
+              Rwanda Web Masters
+            </h2>
+            <p className="why-description">
+              We combine creativity, innovation and modern technologies
+              to build reliable digital solutions that help businesses
+              grow, improve efficiency and achieve long-term success.
+            </p>
+          </div>
+        </Reveal>
 
         <div className="why-bento">
           {features.map((item, index) => (
-            <div
-              className={`why-item ${item.featured ? "why-item-featured" : ""}`}
+            <Reveal
               key={index}
+              delay={index * 110}
+              className={item.featured ? "why-item-featured" : ""}
             >
-              <div className="why-icon">{item.icon}</div>
+              <div
+                className={`why-item ${item.featured ? "why-item-featured" : ""}`}
+              >
+                <div className="why-icon">{item.icon}</div>
 
-              <div className="why-info">
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
+                <div className="why-info">
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 

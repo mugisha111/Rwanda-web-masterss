@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from "react";
 import "./Process.css";
 
 import {
@@ -8,6 +7,7 @@ import {
   FaCheckCircle,
   FaRocket,
 } from "react-icons/fa";
+import Reveal from "../Reveal/Reveal";
 
 const steps = [
   {
@@ -48,66 +48,43 @@ const steps = [
 ];
 
 function Process() {
-  const sectionRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            observer.disconnect(); // animate once only
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section className="process" ref={sectionRef}>
+    <section className="process">
       <div className="process-container">
-        <div className="process-header">
-          <span className="process-tag">OUR PROCESS</span>
+        <Reveal>
+          <div className="process-header">
+            <span className="process-tag">OUR PROCESS</span>
 
-          <h2>
-            How We Build
-            <br />
-            Successful Projects
-          </h2>
+            <h2>
+              How We Build
+              <br />
+              Successful Projects
+            </h2>
 
-          <p>
-            We follow a structured development process that ensures every
-            project is delivered with quality, speed and long-term success.
-          </p>
-        </div>
+            <p>
+              We follow a structured development process that ensures every
+              project is delivered with quality, speed and long-term success.
+            </p>
+          </div>
+        </Reveal>
 
         <div className="process-grid">
           {steps.map((step, index) => (
-            <div
-              className={`process-card ${isVisible ? "reveal" : ""}`}
-              key={step.number}
-              style={{ transitionDelay: `${index * 130}ms` }}
-            >
-              {index !== steps.length - 1 && (
-                <span className="process-connector" />
-              )}
+            <Reveal key={step.number} delay={index * 130}>
+              <div className="process-card">
+                {index !== steps.length - 1 && (
+                  <span className="process-connector" />
+                )}
 
-              <span className="process-number">{step.number}</span>
+                <span className="process-number">{step.number}</span>
 
-              <div className="process-icon">{step.icon}</div>
+                <div className="process-icon">{step.icon}</div>
 
-              <h3>{step.title}</h3>
+                <h3>{step.title}</h3>
 
-              <p>{step.description}</p>
-            </div>
+                <p>{step.description}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>

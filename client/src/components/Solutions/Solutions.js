@@ -1,6 +1,7 @@
 import "./Solutions.css";
 import { FiArrowRight } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+import Reveal from "../Reveal/Reveal";
 
 import webImg from "../../assets/images/product-web.png";
 import mobileImg from "../../assets/images/product-mobile.png";
@@ -49,60 +50,65 @@ function Solutions() {
     <section className="solutions">
       <div className="solutions-container">
 
-        <div className="solutions-title">
-          <span>OUR SOLUTIONS</span>
-          <h2>Digital Solutions We Build</h2>
-          <p>
-            Rwanda Web Masters builds modern digital
-            solutions that help businesses automate,
-            grow and succeed online.
-          </p>
-        </div>
+        <Reveal>
+          <div className="solutions-title">
+            <span>OUR SOLUTIONS</span>
+            <h2>Digital Solutions We Build</h2>
+            <p>
+              Rwanda Web Masters builds modern digital
+              solutions that help businesses automate,
+              grow and succeed online.
+            </p>
+          </div>
+        </Reveal>
 
         <div className="solutions-grid">
           {solutions.map((item, index) => (
-            <div
-              className="solution-card"
-              key={index}
-              style={{ backgroundImage: `url(${item.image})` }}
-            >
+            <Reveal key={index} delay={index * 130}>
+              <div
+                className="solution-card"
+                style={{ backgroundImage: `url(${item.image})` }}
+              >
 
-              <div className="solution-overlay"></div>
+                <div className="solution-overlay"></div>
 
-              <span className="solution-number">
-                {String(index + 1).padStart(2, "0")}
-              </span>
+                <span className="solution-number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
 
-              <div className="solution-tag">{item.tag}</div>
+                <div className="solution-tag">{item.tag}</div>
 
-              <div className="solution-content">
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
+                <div className="solution-content">
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
 
-                <button
-                  className="solution-btn"
-                  onClick={() => navigate(item.link)}
-                >
-                  Learn More
-                  <FiArrowRight />
-                </button>
+                  <button
+                    className="solution-btn"
+                    onClick={() => navigate(item.link)}
+                  >
+                    Learn More
+                    <FiArrowRight />
+                  </button>
+                </div>
+
               </div>
-
-            </div>
+            </Reveal>
           ))}
         </div>
 
         {/* BOTTOM CTA BANNER */}
-        <div className="solutions-cta-banner">
-          <div>
-            <h3>Need a custom solution?</h3>
-            <p>Tell us what you're building and we'll find the right fit.</p>
+        <Reveal delay={550}>
+          <div className="solutions-cta-banner">
+            <div>
+              <h3>Need a custom solution?</h3>
+              <p>Tell us what you're building and we'll find the right fit.</p>
+            </div>
+            <button onClick={() => navigate("/contact")}>
+              Talk To Us
+              <FiArrowRight />
+            </button>
           </div>
-          <button onClick={() => navigate("/contact")}>
-            Talk To Us
-            <FiArrowRight />
-          </button>
-        </div>
+        </Reveal>
 
       </div>
     </section>

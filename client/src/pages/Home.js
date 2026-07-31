@@ -1,7 +1,8 @@
-import { Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import Navbar from "../components/Navbar/Navbar";
-import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
+import Loader from "../components/Loader/Loader";
 import Hero from "../components/Hero/Hero";
 import Services from "../components/Services/Services";
 import Solutions from "../components/Solutions/Solutions";
@@ -17,14 +18,43 @@ import PortfolioPage from "../components/PortfolioPage/PortfolioPage";
 import ServiceDetail from "../components/ServiceDetail/ServiceDetail";
 
 function Home() {
+  const location = useLocation();
+  const [pageLoading, setPageLoading] = useState(false);
+  const [fading, setFading] = useState(false);
+  const [firstRender, setFirstRender] = useState(true);
+
+  useEffect(() => {
+    if (firstRender) {
+      setFirstRender(false);
+      window.scrollTo(0, 0);
+      return;
+    }
+
+    setPageLoading(true);
+    setFading(false);
+    window.scrollTo(0, 0);
+
+    const fadeTimer = setTimeout(() => setFading(true), 450);
+    const removeTimer = setTimeout(() => {
+      setPageLoading(false);
+      window.dispatchEvent(new Event("app-ready"));
+    }, 700);
+
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(removeTimer);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.pathname]);
+
   return (
     <>
-      <ScrollToTop />
+      {pageLoading && <Loader fading={fading} />}
+
       <Navbar />
 
       <Routes>
 
-        {/* HOME PAGE */}
         <Route
           path="/"
           element={
@@ -41,16 +71,9 @@ function Home() {
           }
         />
 
-        {/* ABOUT PAGE */}
         <Route path="/about" element={<About />} />
-
-        {/* CONTACT PAGE */}
         <Route path="/contact" element={<Contact />} />
-
-        {/* PORTFOLIO PAGE */}
         <Route path="/portfolio" element={<PortfolioPage />} />
-
-        {/* SERVICE DETAIL PAGE */}
         <Route path="/services/:slug" element={<ServiceDetail />} />
 
       </Routes>

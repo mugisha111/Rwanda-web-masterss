@@ -2,6 +2,7 @@ import "./Portfolio.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaArrowRight, FaChevronDown } from "react-icons/fa";
+import Reveal from "../Reveal/Reveal";
 
 import project1 from "../../assets/portfolio/project1.png";
 import project2 from "../../assets/portfolio/project2.png";
@@ -83,59 +84,65 @@ function Portfolio() {
       <div className="portfolio-container">
 
         {/* HEADER */}
-        <div className="portfolio-header">
-          <span className="portfolio-tag">OUR PORTFOLIO</span>
-          <h2>
-            Some of Our
-            <br />
-            Recent Projects
-          </h2>
-          <p>
-            We build premium websites, business systems and digital
-            solutions that help businesses grow faster through modern
-            technology and creative design.
-          </p>
-        </div>
+        <Reveal>
+          <div className="portfolio-header">
+            <span className="portfolio-tag">OUR PORTFOLIO</span>
+            <h2>
+              Some of Our
+              <br />
+              Recent Projects
+            </h2>
+            <p>
+              We build premium websites, business systems and digital
+              solutions that help businesses grow faster through modern
+              technology and creative design.
+            </p>
+          </div>
+        </Reveal>
 
         {/* FILTER (visual only here — full filtering lives on /portfolio) */}
-        <div className="portfolio-filter">
-          <button className="active">All</button>
-          <button>Websites</button>
-          <button>Web Apps</button>
-          <button>E-Commerce</button>
-          <button>Branding</button>
-        </div>
+        <Reveal delay={150}>
+          <div className="portfolio-filter">
+            <button className="active">All</button>
+            <button>Websites</button>
+            <button>Web Apps</button>
+            <button>E-Commerce</button>
+            <button>Branding</button>
+          </div>
+        </Reveal>
 
         {/* GRID */}
         <div className="portfolio-grid">
-          {visibleProjects.map((project) => (
-            <div className="portfolio-card" key={project.id}>
+          {visibleProjects.map((project, index) => (
+            <Reveal key={project.id} delay={(index % INITIAL_COUNT) * 130}>
+              <div className="portfolio-card">
 
-              <div className="portfolio-image">
-                <img src={project.image} alt={project.title} />
-                <span className="portfolio-category">{project.category}</span>
-              </div>
-
-              <div className="portfolio-content">
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-
-                <div className="portfolio-tech">
-                  {project.tech.map((tech, index) => (
-                    <span key={index}>{tech}</span>
-                  ))}
+                <div className="portfolio-image">
+                  <img src={project.image} alt={project.title} />
+                  <span className="portfolio-category">{project.category}</span>
                 </div>
 
-                <button
-                  className="portfolio-btn"
-                  onClick={() => navigate("/portfolio")}
-                >
-                  View Project
-                  <FaArrowRight />
-                </button>
-              </div>
+                <div className="portfolio-content">
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
 
-            </div>
+                  <div className="portfolio-tech">
+                    {project.tech.map((tech, techIndex) => (
+                      <span key={techIndex}>{tech}</span>
+                    ))}
+                  </div>
+
+                  <button
+                    className="portfolio-btn"
+                    onClick={() => navigate("/portfolio")}
+                  >
+                    View Project
+                    <FaArrowRight />
+                  </button>
+                </div>
+
+              </div>
+            </Reveal>
           ))}
         </div>
 

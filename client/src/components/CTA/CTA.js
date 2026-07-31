@@ -9,6 +9,7 @@ import {
   FaUser,
   FaBriefcase,
 } from "react-icons/fa";
+import Reveal from "../Reveal/Reveal";
 
 function CTA() {
   const [formData, setFormData] = useState({
@@ -96,7 +97,7 @@ function CTA() {
 
         {/* LEFT */}
 
-        <div className="cta-left">
+        <Reveal className="cta-left">
 
           <span className="cta-tag">
             LET'S BUILD TOGETHER
@@ -149,11 +150,11 @@ function CTA() {
 
           </div>
 
-        </div>
+        </Reveal>
 
         {/* RIGHT */}
 
-        <div className="cta-form-card">
+        <Reveal delay={200} className="cta-form-card">
 
           <form className="cta-form" onSubmit={handleSubmit}>
 
@@ -262,7 +263,7 @@ function CTA() {
 
           </form>
 
-        </div>
+        </Reveal>
 
       </div>
 

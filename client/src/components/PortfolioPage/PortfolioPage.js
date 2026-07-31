@@ -2,6 +2,7 @@ import "./PortfolioPage.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaArrowRight, FaTimes, FaCheckCircle } from "react-icons/fa";
+import Reveal from "../Reveal/Reveal";
 
 import project1 from "../../assets/portfolio/project1.png";
 import project2 from "../../assets/portfolio/project2.png";
@@ -130,40 +131,50 @@ function PortfolioPage() {
 
       {/* HERO */}
       <section className="pf-hero">
-        <span className="pf-tag">OUR PORTFOLIO</span>
-        <h1>
-          Work We're <span>Proud Of</span>
-        </h1>
-        <p>
-          A closer look at the websites, platforms, and digital products
-          we've built for businesses across Rwanda and beyond.
-        </p>
+        <Reveal>
+          <span className="pf-tag">OUR PORTFOLIO</span>
+        </Reveal>
+
+        <Reveal delay={150}>
+          <h1>
+            Work We're <span>Proud Of</span>
+          </h1>
+        </Reveal>
+
+        <Reveal delay={300}>
+          <p>
+            A closer look at the websites, platforms, and digital products
+            we've built for businesses across Rwanda and beyond.
+          </p>
+        </Reveal>
       </section>
 
       {/* STATS */}
       <section className="pf-stats">
         {STATS.map((stat, index) => (
-          <div className="pf-stat-item" key={index}>
+          <Reveal key={index} delay={index * 110} className="pf-stat-item">
             <h3>{stat.value}</h3>
             <p>{stat.label}</p>
-          </div>
+          </Reveal>
         ))}
       </section>
 
       <div className="pf-container">
 
         {/* FILTER */}
-        <div className="pf-filter">
-          {FILTERS.map((filter) => (
-            <button
-              key={filter}
-              className={activeFilter === filter ? "active" : ""}
-              onClick={() => setActiveFilter(filter)}
-            >
-              {filter}
-            </button>
-          ))}
-        </div>
+        <Reveal>
+          <div className="pf-filter">
+            {FILTERS.map((filter) => (
+              <button
+                key={filter}
+                className={activeFilter === filter ? "active" : ""}
+                onClick={() => setActiveFilter(filter)}
+              >
+                {filter}
+              </button>
+            ))}
+          </div>
+        </Reveal>
 
         {/* RESULTS COUNTER */}
         <p className="pf-results-count">
@@ -216,16 +227,18 @@ function PortfolioPage() {
         )}
 
         {/* BOTTOM CTA BANNER */}
-        <div className="pf-cta-banner">
-          <div>
-            <h3>Have a project in mind?</h3>
-            <p>Let's build something your business can grow on.</p>
+        <Reveal>
+          <div className="pf-cta-banner">
+            <div>
+              <h3>Have a project in mind?</h3>
+              <p>Let's build something your business can grow on.</p>
+            </div>
+            <button onClick={() => navigate("/contact")}>
+              Start a Project
+              <FaArrowRight />
+            </button>
           </div>
-          <button onClick={() => navigate("/contact")}>
-            Start a Project
-            <FaArrowRight />
-          </button>
-        </div>
+        </Reveal>
 
       </div>
 

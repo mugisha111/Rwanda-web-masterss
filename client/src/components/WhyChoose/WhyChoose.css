@@ -131,6 +131,7 @@
     border:1px solid rgba(77,208,245,.10);
     box-shadow:0 18px 40px rgba(15,23,42,.06);
     transition:.4s;
+    height:100%;
 }
 
 .why-item:hover{

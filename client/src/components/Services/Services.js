@@ -7,6 +7,7 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import Reveal from "../Reveal/Reveal";
 
 function Services() {
   const navigate = useNavigate();
@@ -42,40 +43,48 @@ function Services() {
     <section className="services" id="services">
 
       <div className="section-title">
-        <h2>What We Do?</h2>
-        <p>
-          We provide modern digital solutions that help businesses
-          grow, automate processes and build a strong online presence.
-        </p>
+        <Reveal>
+          <h2>What We Do?</h2>
+        </Reveal>
+
+        <Reveal delay={150}>
+          <p>
+            We provide modern digital solutions that help businesses
+            grow, automate processes and build a strong online presence.
+          </p>
+        </Reveal>
       </div>
 
       <div className="services-grid">
         {services.map((item, index) => (
-          <div
-            className={`service-card ${item.slug ? "clickable" : ""}`}
-            key={index}
-            onClick={item.slug ? () => navigate(`/services/${item.slug}`) : undefined}
-          >
-            <div className="service-icon">{item.icon}</div>
+          <Reveal key={index} delay={index * 130}>
+            <div
+              className={`service-card ${item.slug ? "clickable" : ""}`}
+              onClick={item.slug ? () => navigate(`/services/${item.slug}`) : undefined}
+            >
+              <div className="service-icon">{item.icon}</div>
 
-            <h3>{item.title}</h3>
-            <p>{item.desc}</p>
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
 
-            {item.slug && (
-              <span className="service-link">
-                Learn More <FaArrowRight />
-              </span>
-            )}
-          </div>
+              {item.slug && (
+                <span className="service-link">
+                  Learn More <FaArrowRight />
+                </span>
+              )}
+            </div>
+          </Reveal>
         ))}
       </div>
 
-      <button
-        className="service-btn"
-        onClick={() => navigate("/contact")}
-      >
-        See All Services
-      </button>
+      <Reveal delay={550}>
+        <button
+          className="service-btn"
+          onClick={() => navigate("/contact")}
+        >
+          See All Services
+        </button>
+      </Reveal>
 
     </section>
   );

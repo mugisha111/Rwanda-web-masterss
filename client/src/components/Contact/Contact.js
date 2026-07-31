@@ -8,6 +8,7 @@ import {
   FaUser,
 } from "react-icons/fa";
 import { FiMapPin, FiClock } from "react-icons/fi";
+import Reveal from "../Reveal/Reveal";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -82,15 +83,23 @@ function Contact() {
 
       {/* HERO */}
       <section className="contact-hero">
-        <span className="contact-eyebrow">Get In Touch</span>
-        <h1 className="contact-title">
-          Let's Talk About Your <span>Next Project</span>
-        </h1>
-        <p className="contact-subtitle">
-          Have a project in mind or a question about our services? Fill in
-          the form below or reach us directly — our team responds within 24
-          hours.
-        </p>
+        <Reveal>
+          <span className="contact-eyebrow">Get In Touch</span>
+        </Reveal>
+
+        <Reveal delay={150}>
+          <h1 className="contact-title">
+            Let's Talk About Your <span>Next Project</span>
+          </h1>
+        </Reveal>
+
+        <Reveal delay={300}>
+          <p className="contact-subtitle">
+            Have a project in mind or a question about our services? Fill in
+            the form below or reach us directly — our team responds within 24
+            hours.
+          </p>
+        </Reveal>
       </section>
 
       {/* FORM + INFO CARD */}
@@ -98,7 +107,7 @@ function Contact() {
         <div className="contact-main-grid">
 
           {/* FORM */}
-          <div className="contact-form-card">
+          <Reveal className="contact-form-card">
             <form className="contact-form" onSubmit={handleSubmit}>
 
               <div className="input-group">
@@ -160,10 +169,10 @@ function Contact() {
                 )}
               </button>
             </form>
-          </div>
+          </Reveal>
 
           {/* INFO CARD */}
-          <div className="contact-info-card">
+          <Reveal delay={200} className="contact-info-card">
             <FiClock className="contact-info-card-icon" />
             <h3>Office Hours</h3>
             <p>
@@ -189,7 +198,7 @@ function Contact() {
             <a href="tel:+250700000000" className="contact-info-card-btn">
               Call Us Now
             </a>
-          </div>
+          </Reveal>
 
         </div>
       </section>
@@ -198,35 +207,35 @@ function Contact() {
       <section className="contact-details">
         <div className="contact-details-grid">
 
-          <div className="contact-detail-item">
+          <Reveal className="contact-detail-item">
             <span className="contact-detail-icon">
               <FaPhoneAlt />
             </span>
             <h4>Phone Number</h4>
             <p>+250 79 377 0200</p>
-          </div>
+          </Reveal>
 
-          <div className="contact-detail-item">
+          <Reveal delay={130} className="contact-detail-item">
             <span className="contact-detail-icon">
               <FaEnvelope />
             </span>
             <h4>Email Address</h4>
             <p>rwandawebmasters@gmail.com</p>
-          </div>
+          </Reveal>
 
-          <div className="contact-detail-item">
+          <Reveal delay={260} className="contact-detail-item">
             <span className="contact-detail-icon">
               <FiMapPin />
             </span>
             <h4>Office Location</h4>
             <p>Kigali, Rwanda</p>
-          </div>
+          </Reveal>
 
         </div>
       </section>
 
       {/* MAP */}
-      <section className="contact-map">
+      <Reveal className="contact-map">
         <iframe
           title="Rwanda Web Masters Location"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255281.6!2d30.0343!3d-1.9536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca4258ed8e797%3A0xf32b36a5411d0bc8!2sKigali!5e0!3m2!1sen!2srw!4v1700000000000"
@@ -237,7 +246,7 @@ function Contact() {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
-      </section>
+      </Reveal>
 
     </div>
   );

@@ -15,6 +15,7 @@ import client2 from "../../assets/testimonials/client2.jpg";
 import client3 from "../../assets/testimonials/client3.jpg";
 import client4 from "../../assets/testimonials/client4.jpg";
 import client5 from "../../assets/testimonials/client5.jpg";
+import Reveal from "../Reveal/Reveal";
 
 const testimonials = [
   {
@@ -98,29 +99,31 @@ function Testimonials() {
 
       <div className="testimonial-container">
 
-        <div className="testimonial-header">
+        <Reveal>
+          <div className="testimonial-header">
 
-          <span className="testimonial-tag">
-            CLIENT TESTIMONIALS
-          </span>
+            <span className="testimonial-tag">
+              CLIENT TESTIMONIALS
+            </span>
 
-          <h2>
-            Customer Say
-            <br />
-            About Our Services
-          </h2>
+            <h2>
+              Customer Say
+              <br />
+              About Our Services
+            </h2>
 
-          <p>
-            Discover what our happy clients say about Rwanda Web Masters
-            after working with us on websites, business systems,
-            mobile apps and digital solutions.
-          </p>
+            <p>
+              Discover what our happy clients say about Rwanda Web Masters
+              after working with us on websites, business systems,
+              mobile apps and digital solutions.
+            </p>
 
-        </div>
+          </div>
+        </Reveal>
 
         <div className="testimonial-wrapper">          {/* LEFT SIDE */}
 
-          <div className="testimonial-left">
+          <Reveal delay={150} className="testimonial-left">
 
             <div className="testimonial-image-box">
 
@@ -151,11 +154,11 @@ function Testimonials() {
 
             </div>
 
-          </div>
+          </Reveal>
 
           {/* RIGHT SIDE */}
 
-          <div className="testimonial-right">
+          <Reveal delay={300} className="testimonial-right">
 
             <div className="testimonial-card">
 
@@ -239,7 +242,7 @@ function Testimonials() {
 
             </div>
 
-          </div>
+          </Reveal>
 
         </div>
 

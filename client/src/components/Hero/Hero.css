@@ -39,11 +39,11 @@
 .hero-container{
 
     width:100%;
-    max-width:1180px;
+    max-width:1240px;
 
     margin:auto;
 
-    padding:120px 25px 70px;
+    padding:120px 24px 70px;
 
     position:relative;
 
@@ -195,7 +195,6 @@
 
     animation:bounce 1.8s infinite;
 
-    /* NEW — button reset */
     background:none;
     border:none;
     outline:none;
@@ -206,6 +205,25 @@
     padding:0;
 }
 
+/* =========================================
+   ENTRANCE ANIMATION (waits for loader)
+========================================= */
+
+.hero-anim{
+    opacity:0;
+    transform:translateY(30px);
+    transition:opacity .8s ease, transform .8s ease;
+}
+
+.hero-anim.hero-start{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.hero-anim-1.hero-start{ transition-delay:.1s; }
+.hero-anim-2.hero-start{ transition-delay:.3s; }
+.hero-anim-3.hero-start{ transition-delay:.55s; }
+.hero-anim-4.hero-start{ transition-delay:.8s; }
 
 @keyframes bounce{
 
